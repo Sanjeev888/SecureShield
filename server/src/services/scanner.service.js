@@ -24,10 +24,8 @@ const scanFile = async (fileId) => {
       throw new Error('File not found on disk');
     }
 
-    // 1. Signature Verification (MIME Spoofing)
-    // using dynamic import for pure ESM module `file-type`
-    const { fileTypeFromFile } = await import('file-type');
-    const typeInfo = await fileTypeFromFile(filePath);
+    const fileType = require('file-type');
+    const typeInfo = await fileType.fromFile(filePath);
     
     const reportedExt = path.extname(fileRecord.originalName).toLowerCase().replace('.', '');
 

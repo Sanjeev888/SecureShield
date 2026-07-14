@@ -13,7 +13,7 @@
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --colors --verbose --detectOpenHandles",
+    "test": "jest -i --colors --verbose --detectOpenHandles",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
@@ -58,7 +58,7 @@
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.0.0",
     "express-rate-limit": "^5.0.0",
-    "file-type": "^22.0.1",
+    "file-type": "^16.5.4",
     "form-data": "^4.0.6",
     "helmet": "^4.1.0",
     "http-status": "^1.4.0",
