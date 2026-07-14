@@ -1,0 +1,58 @@
+name: SecureShield CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+
+    # Backend Tests
+    - name: Install Server Dependencies
+      working-directory: ./server
+      run: npm install
+
+    - name: Run Server Linter
+      working-directory: ./server
+      run: npm run lint
+
+    - name: Run Server Tests
+      working-directory: ./server
+      run: npm test
+      env:
+        MONGODB_URL: mongodb://localhost:27017/testdb
+        JWT_SECRET: testsecret
+        JWT_ACCESS_EXPIRATION_MINUTES: 30
+        JWT_REFRESH_EXPIRATION_DAYS: 30
+
+    # Frontend Tests (Build check)
+    - name: Install Client Dependencies
+      working-directory: ./client
+      run: npm install
+
+    - name: Build Client
+      working-directory: ./client
+      run: npm run build

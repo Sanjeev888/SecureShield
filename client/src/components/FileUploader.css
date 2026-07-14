@@ -1,0 +1,138 @@
+.uploader-container {
+  width: 100%;
+}
+
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(30, 41, 59, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.dropzone:hover, .dropzone.active {
+  border-color: var(--color-primary);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.dropzone-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.dropzone h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.dropzone p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.dropzone-limits {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.file-preview-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.file-info-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-icon-wrapper {
+  background-color: rgba(16, 185, 129, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+}
+
+.file-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.file-name {
+  font-weight: 500;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.remove-btn:hover {
+  color: #ef4444; /* red-500 */
+}
+
+.progress-bar-container {
+  height: 6px;
+  background-color: var(--bg-primary);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.upload-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.upload-success {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  background-color: rgba(16, 185, 129, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}

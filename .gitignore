@@ -1,0 +1,11 @@
+node_modules/
+.env
+dist/
+build/
+uploads/
+.DS_Store
+coverage/
+*.log
+Malware_Test_Kit/
+server/scripts/Malware_Test_Kit/
+server/scripts/fixtures/
