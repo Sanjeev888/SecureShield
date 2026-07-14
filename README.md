@@ -76,5 +76,4 @@ node scripts/seed.js
 ```
 This script will register an admin user, generate mock malicious files (a spoofed image, a zip bomb, an archive with a hidden executable, and an oversized file), and upload them via the API. Log in to the dashboard to watch the engine flag them!
 
-## 📜 License
-MIT License
+
