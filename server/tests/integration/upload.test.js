@@ -44,10 +44,7 @@ describe('Upload routes', () => {
     });
 
     test('should return 401 error if access token is missing', async () => {
-      await request(app)
-        .post('/v1/uploads')
-        .attach('file', dummyFilePath)
-        .expect(httpStatus.UNAUTHORIZED);
+      await request(app).post('/v1/uploads').expect(httpStatus.UNAUTHORIZED);
     });
 
     test('should return 400 error if no file is provided', async () => {
